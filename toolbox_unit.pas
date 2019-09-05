@@ -230,11 +230,11 @@ function inttotimestr(zeitwert: integer; istinms: boolean): string;
   var
     wertstr: string;
   begin
-    int2 := '--';
+    Result := '--';
     wertstr := inttostr(intwert);
     if Length(wertstr) < 2 then
       wertstr := '0' + wertstr;
-    int2 := wertstr;
+    Result := wertstr;
   end;
 
 var
