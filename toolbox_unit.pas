@@ -40,19 +40,19 @@ function specialtrim(const S: string): string;
 procedure zeilezerlegen(input: string; var ausgabe: array of string);
 
 function inttotimestr(zeitwert: integer; istinms: boolean): string;
-Function pfaddatei2Name(pfaddatei: string): string;
+Function pfaddatei2Name(const pfaddatei: string): string;
 
 function str2verzeichnisdatei(eingabe: string; ersatzzeichen: char): string;
 
 { =========================================================================== }
 
-function FilePath2path(filepath: string): string;
-function FilePath2file(filepath: string): string;
+function FilePath2path(const filepath: string): string;
+function FilePath2file(const filepath: string): string;
 
 { =========================================================================== }
 
-function pfaddatei2album(datei: string): string;
-function pfaddatei2cover(datei: string; coveroptdateiname: string): string;
+function pfaddatei2album(const datei: string): string;
+function pfaddatei2cover(const datei: string; coveroptdateiname: string): string;
 
 { =========================================================================== }
 
@@ -292,7 +292,7 @@ begin
   Result := h_ + ':' + m_ + ':' + s_ + ':' + s100_;
 end;
 
-Function pfaddatei2Name(pfaddatei: string): string;
+Function pfaddatei2Name(const pfaddatei: string): string;
 var
   sneu: string;
 begin
@@ -353,7 +353,7 @@ end;
 
 { =========================================================================== }
 
-function FilePath2path(filepath: string): string;
+function FilePath2path(const filepath: string): string;
 var
   path: string;
 begin
@@ -366,14 +366,14 @@ begin
   Result := trim(path);
 end;
 
-function FilePath2file(filepath: string): string;
+function FilePath2file(const filepath: string): string;
 begin
   Result := trim(ExtractFileName(filepath));
 end;
 
 { =========================================================================== }
 
-function pfaddatei2cover(datei: string; coveroptdateiname: string): string;
+function pfaddatei2cover(const datei: string; coveroptdateiname: string): string;
 
   function findecover(pfad: string): string;
   var
@@ -478,7 +478,7 @@ begin
   Result := coverdatei;
 end;
 
-function pfaddatei2album(datei: string): string;
+function pfaddatei2album(const datei: string): string;
 var
   dateipfad: string;
   atmpstr: string;
